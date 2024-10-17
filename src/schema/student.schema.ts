@@ -8,14 +8,8 @@ export class Student {
   @Prop({ required: true })
   fullName: string;
 
-  @Prop({ required: true, unique: true })
-  email: string;
-
-  @Prop({ required: true })
-  address: string;
-
-  @Prop({ required: true })
-  gender: 'male' | 'female';
+  @Prop({ default: true, required: true })
+  isActive: boolean;
 
   @Prop({ default: false })
   isDeleted: boolean;
