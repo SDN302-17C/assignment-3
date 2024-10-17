@@ -59,7 +59,7 @@ export class StudentService {
 
   async getById(id: string) {
     const student = await this.studentModel
-      .findById(id)
+      .findById({id, isDeleted: false})
       .select('-isDeleted')
       .exec();
 
