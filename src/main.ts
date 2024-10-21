@@ -11,7 +11,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('QE170097 - Students API')
     .setDescription('Assignment 3 - API CRUD WITH SPECIFICATION')
-    .setVersion('1.0')
+    .setVersion('2.0')
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-docs', app, documentFactory);

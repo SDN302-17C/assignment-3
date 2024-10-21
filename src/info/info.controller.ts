@@ -5,7 +5,7 @@ import { ApiTags } from '@nestjs/swagger';
 @Controller('info')
 export class InfoController {
   @Get()
-  async getAll() {
+  async getInfo() {
     return {
       data: {
         fullName: 'Đinh Quốc Chương',

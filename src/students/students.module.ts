@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { StudentController } from './student.controller';
-import { StudentService } from './student.service';
+import { StudentsController } from './students.controller';
+import { StudentsService } from './students.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { StudentSchema } from 'src/schema/student.schema';
 
@@ -8,8 +8,8 @@ import { StudentSchema } from 'src/schema/student.schema';
   imports: [
     MongooseModule.forFeature([{ name: 'Student', schema: StudentSchema }]),
   ],
-  controllers: [StudentController],
-  providers: [StudentService],
-  exports: [StudentService],
+  controllers: [StudentsController],
+  providers: [StudentsService],
+  exports: [StudentsService],
 })
-export class UserModule {}
+export class StudentsModule {}

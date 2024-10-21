@@ -1,18 +1,18 @@
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
+import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
+import { IsBoolean, IsNotEmpty, IsString } from "class-validator";
 
 export class CreateStudentDto {
+  @ApiProperty({ description: 'Student full name' })
+  @IsString()
+  @IsNotEmpty()
+  name: string;
+
   @ApiProperty({ description: 'Student code' })
   @IsString()
   @IsNotEmpty()
   studentCode: string;
 
-  @ApiProperty({ description: 'Student full name' })
-  @IsString()
-  @IsNotEmpty()
-  fullName: string;
-
-  @ApiProperty({ description: 'Student is active (true) or graduated (false).' })
+  @ApiProperty({ description: 'Student status' })
   @IsBoolean()
   @IsNotEmpty()
   isActive: boolean;
@@ -20,8 +20,8 @@ export class CreateStudentDto {
 
 export class UpdateStudentDto {
   @ApiPropertyOptional({ description: 'Student full name' })
-  fullName?: string;
+  name?: string;
 
-  @ApiPropertyOptional({ description: 'Student is active (true) or graduated (false).' })
+  @ApiPropertyOptional({ description: 'Student status' })
   isActive?: boolean;
 }

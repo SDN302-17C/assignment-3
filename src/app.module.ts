@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-import { UserModule } from './students/student.module';
 import { InfoModule } from './info/info.module';
+import { StudentsModule } from './students/students.module';
 
 @Module({
   imports: [
@@ -10,8 +10,8 @@ import { InfoModule } from './info/info.module';
     MongooseModule.forRoot(
       process.env.DATABASE_URL ?? 'mongodb://localhost:27017/students',
     ),
-    UserModule,
     InfoModule,
+    StudentsModule,
   ],
 })
 export class AppModule {}
